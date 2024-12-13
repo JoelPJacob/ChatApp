@@ -1,20 +1,18 @@
-// App.js
+// src/routes/Route.js
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import ChatListScreen from './src/pages/ChatListScreen';
-import ChatScreen from './src/pages/ChatScreen';
+
+import ChatScreen from '../pages/ChatScreen';
 
 const Stack = createNativeStackNavigator();
 
-export default function App() {
-  return (
-    <NavigationContainer>
-    <Stack.Navigator initialRouteName="ChatList">
-      <Stack.Screen name="ChatList" component={ChatListScreen} />
+const Route = () => (
+  <NavigationContainer>
+    <Stack.Navigator initialRouteName="Chat">
       <Stack.Screen name="Chat" component={ChatScreen} />
     </Stack.Navigator>
   </NavigationContainer>
-  );
-}
+);
 
+export default Route;
